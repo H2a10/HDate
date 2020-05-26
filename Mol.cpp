@@ -1,6 +1,6 @@
-
-#include "Mol.h"
 #include <iostream>
+#include "Mol.h"
+#include <cstdio>
 using namespace std;
 Mol::Mol(short d,short h,int c)
 {
@@ -22,7 +22,21 @@ Mol Mol::operator+(const Mol h)const{
 Mol::~Mol()
 {
 }
+void Mol::getmolofyear(int year){
+    int cycles,remain;
+    int nl=0,nr=0;
+    cycles=year/19;
+    remain=year%19;
+    for (int i=0;i<remain;i++){
+        cout<<YEAR_TYPES[i]<<std::endl;
+        if (YEAR_TYPES[i])
+            nl+=1;
+        else
+            nr+=1;
+    }
+    std::printf("cycle number: %1$d\nnumber of remaining years: %2$d\nleap years: %3$d\nreg years: %4$d\n",cycles,remain,nl,nr);
+}
 int main(){
     Mol h {};
-    cout<<(REG_YEAR_VAL*12)+(LEAP_YEAR_VAL*7);
+    h.getmolofyear(5745);
 }

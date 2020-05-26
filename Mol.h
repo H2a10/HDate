@@ -1,5 +1,5 @@
 #include <ostream>
-
+#include <utility>
 #pragma once
 class Mol
 {
@@ -13,10 +13,12 @@ public:
     friend std::ostream&operator<<(std::ostream&out,Mol h);
     Mol operator*(int) const;
     Mol operator+(const Mol) const;
+    void getmolofyear(int year);
     ~Mol();
 };
 const Mol START_VAL={2,5,204};
 const Mol MONTH_VAL={29,12,793};
 const Mol REG_YEAR_VAL={348,144,9516};
 const Mol LEAP_YEAR_VAL={5,21,589};
-const Mol CYCLE_VAL;
+const Mol CYCLE_VAL={2,16,595};
+const bool YEAR_TYPES[19]={0,0,1,0,0,1,0,1,0,0,1,0,0,1,0,0,1,0,1};
