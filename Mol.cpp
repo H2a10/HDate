@@ -22,21 +22,24 @@ Mol Mol::operator+(const Mol h)const{
 Mol::~Mol()
 {
 }
-void Mol::getmolofyear(int year){
+Mol Mol::getmolofyear(int year){
+    year-=1;
     int cycles,remain;
     int nl=0,nr=0;
     cycles=year/19;
     remain=year%19;
-    for (int i=0;i<remain;i++){
-        cout<<YEAR_TYPES[i]<<std::endl;
+    int i;
+    for (i=0;i<remain;i++){
+        //cout<<YEAR_TYPES[i]<<std::endl;
         if (YEAR_TYPES[i])
             nl+=1;
         else
             nr+=1;
     }
     std::printf("cycle number: %1$d\nnumber of remaining years: %2$d\nleap years: %3$d\nreg years: %4$d\n",cycles,remain,nl,nr);
+    return (CYCLE_VAL*cycles)+(REG_YEAR_VAL*nr)+(LEAP_YEAR_VAL*nl)+START_VAL;
 }
 int main(){
     Mol h {};
-    h.getmolofyear(5745);
+    cout<<h.getmolofyear(5780);
 }
