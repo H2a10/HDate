@@ -1,7 +1,7 @@
 #include <ostream>
 
 #pragma once
-class HDate
+class Mol
 {
 private:
     short day;
@@ -9,14 +9,14 @@ private:
     int ch;
     //void simp();
 public:
-    HDate(short d=0,short h=0,int c=0);
-    friend std::ostream&operator<<(std::ostream&out,HDate h);
-    HDate operator*(int) const;
-    HDate operator+(const HDate) const;
-    ~HDate();
+    Mol(short d=0,short h=0,int c=0);
+    friend std::ostream&operator<<(std::ostream&out,Mol h);
+    Mol operator*(int) const;
+    Mol operator+(const Mol) const;
+    ~Mol();
 };
-const HDate START_VAL={2,5,204};
-const HDate MONTH_VAL={29,12,793};
-const HDate REG_YEAR_VAL={348,144,9516};
-const HDate LEAP_YEAR_VAL={5,21,589};
-const HDate CYCLE_VAL;
+const Mol START_VAL={2,5,204};
+const Mol MONTH_VAL={29,12,793};
+const Mol REG_YEAR_VAL={348,144,9516};
+const Mol LEAP_YEAR_VAL={5,21,589};
+const Mol CYCLE_VAL;
