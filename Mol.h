@@ -13,7 +13,7 @@ public:
     friend std::ostream&operator<<(std::ostream&out,Mol h);
     Mol operator*(int) const;
     Mol operator+(const Mol) const;
-    void getmolofyear(int year);
+    Mol getmolofyear(int year);
     ~Mol();
 };
 const Mol START_VAL={2,5,204};
